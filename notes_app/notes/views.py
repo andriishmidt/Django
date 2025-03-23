@@ -1,5 +1,18 @@
-from django.http import HttpResponse
+from django.shortcuts import render
 
 
 def index(request):
-    return HttpResponse('Hello from Notes app.')
+    data = {
+        'title': 'Головна сторінка!',
+        'values': ['Some', 'Hello', '12345'],
+        'obj': {
+            'car': 'BMW',
+            'age': 18,
+            'hobby': 'Football'
+        }
+    }
+    return render(request, 'notes/index.html', data)
+
+
+def about(request):
+    return render(request, 'notes/about.html')

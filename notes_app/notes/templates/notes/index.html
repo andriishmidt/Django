@@ -1,0 +1,21 @@
+{% extends 'notes/layout.html' %} {% block title %}Головна сторінка{% endblock %}
+{% block content %}
+<div class="features">
+  <h1>{{ title }}</h1>
+  <p>
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad laudantium
+    tempore ipsam iure quod excepturi dolores harum provident quia, maxime
+    cupiditate deserunt aspernatur assumenda quibusdam neque? Quam, voluptate
+    nisi? Aliquid.
+  </p>
+  <button class="btn btn-warning">
+    {% filter upper %}На сторінку про нас{% endfilter %}
+  </button>
+
+  {% for el in values %}
+  <p>{{ el|upper }}</p>
+  {% endfor %} {% for el in obj %}
+  <p>{{ el }}</p>
+  {% endfor %}
+</div>
+{% endblock %}
