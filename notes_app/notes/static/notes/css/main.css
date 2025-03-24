@@ -7,7 +7,7 @@ aside {
   background: #181818;
   width: 20%;
   padding: 2.5%;
-  height: 100vh;
+  height: 120vh;
   color: #fff;
   border-right: 5px solid #4d4d4d;
 }
@@ -56,7 +56,7 @@ main .features {
   float: left;
   width: 75%;
   color: #fff;
-  margin-top: 100px;
+  margin-top: 50px;
   text-align: center;
 }
 
@@ -67,4 +67,12 @@ main .features h1 {
 main .features p {
   max-width: 400px;
   margin: 20px auto;
+}
+
+.alert-warning {
+  float: left;
+  clear: both;
+  width: 400px;
+  margin: 20px 34%;
+  text-align: left;
 }

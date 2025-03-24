@@ -1,18 +1,10 @@
 from django.shortcuts import render
-
+from .models import Articles, Categories
 
 def index(request):
-    data = {
-        'title': 'Головна сторінка!',
-        'values': ['Some', 'Hello', '12345'],
-        'obj': {
-            'car': 'BMW',
-            'age': 18,
-            'hobby': 'Football'
-        }
-    }
-    return render(request, 'notes/index.html', data)
-
+    notes = Articles.objects.order_by('date')
+    return render(request, 'notes/index.html', {'notes': notes})
 
 def about(request):
-    return render(request, 'notes/about.html')
+    categories = Categories.objects.all
+    return render(request, 'notes/about.html', {'categories': categories})
