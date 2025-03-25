@@ -1,15 +1,21 @@
-{% extends 'notes/layout.html' %} {% block title %}Нотатки{% endblock %}
+{{% extends 'notes/layout.html' %}
+{% block title %}Нотатки{% endblock %}
+
 {% block content %}
 <div class="features">
     <h1>Нотатки</h1>
-    {% if notes %} {% for el in notes %}
-    <div class="alert alert-warning">
-      <h3>{{ el.title }}</h3>
-      <p>Нагадування: {{ el.reminder }}</p>
-      <p>{{ el.full_text }}</p>
-      <p>{{ el.date }}</p>
-    </div>
-    {% endfor %} {% else %}
-    <p>У вас немає записів!</p>
+    {% if notes %}
+        {% for note in notes %}
+            <div class="alert alert-warning">
+                <h3>{{ note.title }}</h3>
+                <p>Нагадування: {{ note.reminder }}</p>
+                <p>{{ note.full_text }}</p>
+                <p>{{ note.date }}</p>
+                <a href="{% url 'delete_note' note.id %}" class="btn btn-danger">Видалити</a>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>У вас немає записів!</p>
     {% endif %}
+</div>
 {% endblock %}

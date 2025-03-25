@@ -27,6 +27,12 @@
         <a href="{% url 'about' %}"
           ><li><i class="fa-solid fa-newspaper"></i> Категорії</li></a
         >
+        <a href="{% url 'add_category' %}"
+        ><li><button class="btn btn-info"><i class="fa-solid fa-plus"></i> Нова категорія</button></li></a
+        >
+        <a href="{% url 'create' %}"
+        ><li><button class="btn btn-info"><i class="fa-solid fa-plus"></i> Додати нотатку</button></li></a
+        >
       </ul>
     </aside>
     <main>{% block content %} {% endblock %}</main>

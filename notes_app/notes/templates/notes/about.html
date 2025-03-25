@@ -1,13 +1,17 @@
-{% extends 'notes/layout.html' %} {% block title %}Категорії{% endblock %}
+{% extends 'notes/layout.html' %}
+{% block title %}Категорії{% endblock %}
+
 {% block content %}
 <div class="features">
   <h1>Категорії</h1>
-  {% if categories %} {% for el in categories %}
-    <div class="alert alert-warning">
-      <h3>{{ el.title }}</h3>
-    </div>
-  {% endfor %} {% else %}
-  <p>У вас немає записів!</p>
+  {% if categories %}
+    {% for el in categories %}
+      <div class="alert alert-warning">
+        <h3>{{ el.name }}</h3>
+      </div>
+    {% endfor %}
+  {% else %}
+    <p>У вас немає записів!</p>
   {% endif %}
 </div>
 {% endblock %}
